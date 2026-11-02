@@ -222,6 +222,13 @@ function word(text,{x=0,y=3,z,width=24,front='#B08F5E',side='#8E7553',layers=10,
   scene.add(grp); return grp;
 }
 
+/* brand logo as a flat plaque in the scene */
+function logoPlane(src,w,x,y,z,noFog){ const im=new Image(); im.crossOrigin='anonymous';
+  im.onload=()=>{ const t=new THREE.Texture(im); t.encoding=THREE.sRGBEncoding; t.anisotropy=8; t.needsUpdate=true;
+    const m=new THREE.Mesh(new THREE.PlaneGeometry(w,w*im.height/im.width),new THREE.MeshBasicMaterial({map:t,transparent:true,depthWrite:false,fog:!noFog}));
+    m.position.set(x,y,z); m.renderOrder=2; scene.add(m); };
+  im.src=src; }
+
 /* photo frames */
 const PICS=[]; let TEX=[];
 function frame(w,h,x,y,z,idx,{look=null,ry=0,parent=scene}={}){
@@ -271,7 +278,7 @@ function build(){
   floral(-3.2,0,-11,.8,.5,mobile?90:180); floral(3.2,0,-11,.8,.5,mobile?90:180);
   floral(-2.9,1.2,-11.3,.5,.35,60); floral(2.9,1.2,-11.3,.5,.35,60);
   // brand plaque above the arch
-  W.logo=word('Joiful Events',{y:7.6,z:-11.55,width:7,front:'#2A231E',side:'#7E6C5A',layers:3,depth:.06});
+  logoPlane(A+'photos/logo.png',2.7,0,8.3,-11.5,false);
 
   /* --- Scene 2: IMAGINE --- */
   word('IMAGINE',{y:3.4,z:-60,width:mobile?20:28});
@@ -469,6 +476,10 @@ function setItems(list){ if(!list.length) return; ITEMS=list.concat(ITEMS.filter
   initCurves(); computeAnchors(); wirePicking();
   addEventListener('load',computeAnchors);
   requestAnimationFrame(tick);
+  // keep the floating button out of the way where the page already shows the same buttons
+  const fcta=$('.float-cta'), seen=new Set();
+  const fo=new IntersectionObserver(es=>{ es.forEach(e=>e.isIntersecting?seen.add(e.target.id):seen.delete(e.target.id)); fcta.classList.toggle('away',seen.size>0); },{threshold:.35});
+  ['home','about','contact'].forEach(id=>fo.observe(document.getElementById(id)));
   // chapter rail
   const rail=$$('.rail span');
   const ro=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ const ch=e.target.dataset.ch; rail.forEach(r=>r.classList.toggle('on',r.dataset.ch===ch)); } }),{rootMargin:'-45% 0px -45% 0px'});
