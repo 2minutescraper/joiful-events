@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Joiful Events · Event Planning & Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Joiful Events plans and styles gender reveals, baby showers, dinner parties and celebrations, with flexible planning from consultations to full service. Where every detail tells a story.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Joiful Events · Where every detail tells a story">
+<meta property="og:description" content="Event consultations, coordination, partial and full-service planning, and event design and styling.">
+<meta property="og:image" content="__A__photos/candles.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F5EFE5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F5EFE5'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23A9864F'%3EJ%3C/text%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.4 system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="__A__site.css">
+
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <a class="wordmark" href="#home" aria-label="Joiful Events, back to start"><span>Joiful <i>Events</i></span></a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="links">Menu</button>
+  <nav class="links" id="links" aria-label="Main">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#design">Services</a>
+    <button type="button" data-open-gallery>Portfolio</button>
+    <a href="#contact">Contact</a>
+    <button type="button" class="add" id="addBtn" title="Preview the site with real event photos">Add photos</button>
+  </nav>
+  <input type="file" id="fileIn" accept="image/*" multiple hidden>
+</header>
+
+<div class="rail" aria-hidden="true"><span data-ch="imagine">Imagine</span><span data-ch="design">Design</span><span data-ch="celebrate">Celebrate</span></div>
+<button class="float-cta" type="button" data-inquire>Let’s plan your event</button>
+
+<main>
+  <section class="sec hero left" id="home" data-ch="">
+    <div class="wrap"><div class="card reveal">
+      <div class="eyebrow">Event planning &amp; design</div>
+      <h1 style="margin-top:18px">Where every detail <em>tells a story.</em></h1>
+      <p class="lede">Your vision. Our passion. Unforgettable moments.</p>
+      <div class="btns">
+        <button class="btn solid" type="button" data-inquire>Plan your event</button>
+        <button class="btn ghost" type="button" data-open-gallery>Explore our portfolio</button>
+      </div>
+      <div class="scrollcue">Scroll to step inside</div>
+    </div></div>
+  </section>
+
+  <section class="sec right" id="imagine" data-ch="imagine">
+    <div class="wrap"><div class="card reveal">
+      <div class="eyebrow">Chapter I · Imagine</div>
+      <h2>Every great celebration begins with <em>a vision.</em></h2>
+      <p>Whether you have every detail imagined or simply know how you want the moment to feel, Joiful Events helps turn your inspiration into something extraordinary.</p>
+      <p>Palettes, florals, tablescapes and light. We start with how you want your guests to feel, then build the room around it.</p>
+    </div></div>
+  </section>
+
+  <section class="sec left" id="design" data-ch="design">
+    <div class="wrap"><div class="card reveal">
+      <div class="eyebrow">Chapter II · Design</div>
+      <h2>Planning services, <em>tailored to you.</em></h2>
+      <p>Flexible support for your celebration, from a single consultation to managing every detail from start to finish. Seamless, stress-free, and unforgettable.</p>
+      <div class="services" id="services"></div>
+    </div></div>
+  </section>
+
+  <section class="sec right" id="transform" data-ch="design">
+    <div class="wrap"><div class="card reveal">
+      <div class="eyebrow">The transformation</div>
+      <h2>From an empty room to <em>your celebration.</em></h2>
+      <p>Keep scrolling and watch the space come together, one layer at a time.</p>
+      <div class="meter" id="meter">
+        <div class="meter-row">Tables placed</div>
+        <div class="meter-row">Chairs set</div>
+        <div class="meter-row">Linens dressed</div>
+        <div class="meter-row">Florals arranged</div>
+        <div class="meter-row">Candles lit</div>
+        <div class="meter-row">Room aglow</div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="sec left" id="celebrate" data-ch="celebrate">
+    <div class="wrap"><div class="card reveal">
+      <div class="eyebrow">Chapter III · Celebrate</div>
+      <h2>Where the <em>magic</em> happens.</h2>
+      <p>The final reveal. The atmosphere, the guests, the details, and the moments people talk about long after the night ends.</p>
+      <div class="thumbs" id="thumbs"></div>
+      <div class="featured" id="featured" aria-label="Featured celebrations"></div>
+      <div class="btns"><button class="btn solid" type="button" data-open-gallery>View the full portfolio</button></div>
+      <p class="note">Tip: tap any framed photo floating in the scene to open it.</p>
+    </div></div>
+  </section>
+
+  <section class="sec story" id="about" data-ch="" aria-labelledby="storyTitle">
+    <div class="wrap"><article class="story-card reveal">
+      <figure class="portrait"><img id="storyImg" crossorigin="anonymous" alt="The founder of Joiful Events with her husband and their baby daughter, outdoors among pine trees" src="__A__photos/story.jpg"><figcaption>The family behind Joiful Events</figcaption></figure>
+      <div class="story-text">
+        <div class="eyebrow">A little about Joiful Events</div>
+        <h2 id="storyTitle">Our <em>story.</em></h2>
+        <p class="lede">I’ve always had a passion for planning and bringing people together to create meaningful experiences.</p>
+        <p>That passion naturally led me to plan my own wedding. While planning my wedding, I often felt like my husband and I were just another number on a calendar or another invoice to be paid. At times, it felt like our vision, our priorities, and the little details that mattered most to us weren’t truly being heard. That experience stayed with me because I believe every meaningful celebration deserves to feel personal, and no one should ever feel like their special moment is just another event on someone’s schedule.</p>
+        <p>That experience inspired me to create Joiful Events.</p>
+        <p>I wanted to build something different! A business rooted in thoughtfulness, inclusivity, and genuine care for the people behind every celebration. I want every client to feel heard, valued, and involved throughout the planning process, knowing that their ideas matter and their vision is worth bringing to life.</p>
+        <p>At Joiful Events, my mission is to create beautiful, meaningful experiences that reflect each client’s unique story. I believe event planning is about more than coordinating vendors, managing timelines, and bringing beautiful details together. It’s about creating an experience where people feel welcomed, celebrated, and cared for from the first conversation to the final detail.</p>
+        <blockquote class="pull">Regardless of how many events are on the calendar, every client deserves to feel like their celebration matters.</blockquote>
+        <p class="welcome">Welcome to Joiful Events! Where every detail is intentional, every story matters, and every event deserves to be celebrated.</p>
+        <div class="btns"><button class="btn solid" type="button" data-inquire>Tell us your story</button></div>
+      </div>
+    </article></div>
+  </section>
+
+  <section class="sec right" id="difference" data-ch="">
+    <div class="wrap"><div class="card reveal">
+      <div class="eyebrow">Our approach</div>
+      <h2>Thoughtful planning <em>starts with listening.</em></h2>
+      <p>At Joiful Events, we focus on creating an experience that feels personal, supportive, and true to each client’s vision. Every celebration deserves intention, inclusivity, and a personal touch, and we aim to achieve that with you!</p>
+      <ul class="statements">
+        <li>Listening first <span>Your vision</span></li>
+        <li>Intention <span>Every detail</span></li>
+        <li>Inclusivity <span>Every guest</span></li>
+        <li>A personal touch <span>Every story</span></li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section class="sec left" id="journey" data-ch="">
+    <div class="wrap"><div class="card reveal">
+      <div class="eyebrow">Your journey</div>
+      <h2>Let’s bring your vision <em>to life.</em></h2>
+      <ol class="steps">
+        <li><b>01</b><div><h3>Connect</h3><p>Tell us about your event, your ideas, and what you envision.</p></div></li>
+        <li><b>02</b><div><h3>Create</h3><p>Work together to shape the design, details, and experience.</p></div></li>
+        <li><b>03</b><div><h3>Celebrate</h3><p>Watch your vision become a beautifully executed event.</p></div></li>
+      </ol>
+      <span class="draft">Suggested flow · for Joiful Events to approve</span>
+      <div class="btns"><button class="btn solid" type="button" data-inquire>Start with step one</button></div>
+    </div></div>
+  </section>
+
+  <section class="sec center" id="contact" data-ch="">
+    <div class="wrap"><div class="card reveal">
+      <div class="eyebrow">Joiful Events</div>
+      <h2>Your moment deserves to be <em>extraordinary.</em></h2>
+      <p class="lede">Let’s create something beautiful together.</p>
+      <div class="btns">
+        <button class="btn solid" type="button" data-inquire>Plan your event</button>
+        <button class="btn ghost" type="button" data-open-gallery>Explore our portfolio</button>
+      </div>
+      <div id="contactLine"></div>
+    </div></div>
+  </section>
+</main>
+
+<div class="overlay" id="gallery" hidden role="dialog" aria-modal="true" aria-labelledby="galTitle">
+  <div class="ov-head"><h2 id="galTitle">Portfolio</h2><button class="close" type="button" data-close>Close</button></div>
+  <div class="filters" id="filters" role="group" aria-label="Filter by celebration"></div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="overlay dark" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb">
+    <div class="ov-head" style="width:100%"><span class="eyebrow" style="color:var(--champagne)" id="lbCap">Portfolio</span><button class="close" type="button" data-close>Close</button></div>
+    <figure><img id="lbImg" alt=""></figure>
+    <div class="lb-nav"><button class="close" type="button" id="lbPrev">Previous</button><span id="lbCount">1 / 12</span><button class="close" type="button" id="lbNext">Next</button></div>
+  </div>
+</div>
+
+<div class="overlay" id="inquiry" hidden role="dialog" aria-modal="true" aria-labelledby="inqTitle">
+  <div class="inq">
+    <div class="ov-head" style="margin-bottom:0"><h2 id="inqTitle">Plan your event</h2><button class="close" type="button" data-close>Close</button></div>
+    <p>Tell us a little about the celebration you have in mind.</p>
+    <form id="inqForm" novalidate>
+      <label>Your name<input id="f-name" name="name" required autocomplete="name"></label>
+      <label>Email<input id="f-email" name="email" type="email" required autocomplete="email"></label>
+      <label>Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel"></label>
+      <label>Event type<select id="f-type" name="type"><option>Wedding</option><option>Birthday</option><option>Private celebration</option><option>Corporate gathering</option><option>Something else</option></select></label>
+      <label>Event date<input id="f-date" name="date" type="date"></label>
+      <label>Guest count<input id="f-guests" name="guests" inputmode="numeric" placeholder="Approximate"></label>
+      <label class="full">Your vision<textarea id="f-vision" name="vision" placeholder="Colors, mood, venue, anything you’re dreaming about"></textarea></label>
+      <div class="btns"><button class="btn solid" type="submit">Prepare my inquiry</button></div>
+    </form>
+    <div id="inqDone" hidden>
+      <div class="summary" id="inqText"></div>
+      <div class="btns"><button class="btn solid" type="button" id="copyInq">Copy inquiry</button><button class="btn ghost" type="button" id="editInq">Edit</button></div>
+      <p class="note" id="inqNote">Your inquiry is ready. Copy it and send it to Joiful Events on Instagram or TikTok.</p>
+    </div>
+  </div>
+</div>
+
+<script>window.ASSETS="__A__";</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="__A__site.js"></script>
+
+</body>
+</html>
